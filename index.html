@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GamezeraOFC — Escolha seus jogos</title>
+  <meta name="description" content="Escolha os jogos que você quer no seu PS4 ou PS5 e veja se cabem no seu videogame.">
+  <link rel="icon" href="icone.png">
+  <link rel="apple-touch-icon" href="icone.png">
+  <meta property="og:title" content="GamezeraOFC — Escolha seus jogos">
+  <meta property="og:description" content="Monte sua lista de jogos e envie pelo WhatsApp.">
+  <meta property="og:image" content="logo.png">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header class="topo">
+    <img class="logo" src="logo.png" alt="GamezeraOFC">
+    <div>
+      <h1 id="nome-loja">Loja</h1>
+      <p>Escolha os jogos que você quer no seu videogame. A gente compra na sua conta e instala tudo pra você.</p>
+      <a id="insta" class="insta" target="_blank" rel="noopener" hidden></a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="catalogo">
+      <div class="filtros">
+        <input id="busca" type="search" placeholder="Buscar jogo..." aria-label="Buscar jogo">
+        <select id="genero" aria-label="Gênero"></select>
+        <select id="ordem" aria-label="Ordenar">
+          <option value="titulo">A–Z</option>
+          <option value="menor">Menor tamanho</option>
+          <option value="maior">Maior tamanho</option>
+        </select>
+      </div>
+      <p id="contagem" class="contagem"></p>
+      <div id="grade" class="grade"></div>
+    </section>
+
+    <aside id="painel" class="painel">
+      <h2>1. Seu videogame</h2>
+      <label>Modelo
+        <select id="console"></select>
+      </label>
+      <label>Espaço já usado com outros jogos (GB)
+        <input id="ocupado" type="number" min="0" step="1" value="0" inputmode="numeric">
+      </label>
+
+      <h2>2. Espaço</h2>
+      <div class="barra" aria-hidden="true">
+        <span id="barra-ocupado" class="seg ocupado"></span>
+        <span id="barra-jogos" class="seg jogos"></span>
+      </div>
+      <p id="espaco-texto" class="espaco-texto"></p>
+
+      <h2>3. Jogos escolhidos <span id="qtd" class="qtd">0</span></h2>
+      <ul id="lista" class="lista"></ul>
+      <p id="taxa" class="taxa"></p>
+
+      <h2>4. Seus dados</h2>
+      <label>Seu nome
+        <input id="nome" type="text" autocomplete="name">
+      </label>
+      <button id="enviar" class="btn-enviar" disabled>Enviar pedido pelo WhatsApp</button>
+      <p class="aviso">Os jogos são comprados na sua conta PSN, pelo preço da PlayStation Store no dia. Tamanhos são aproximados.</p>
+    </aside>
+  </main>
+
+  <a href="#painel" id="mini" class="mini">
+    <span class="mini-barra"><span id="mini-fill"></span></span>
+    <span id="mini-texto">0 jogos</span>
+    <strong>Ver lista ↓</strong>
+  </a>
+
+  <script src="dados.js"></script>
+  <script src="jogos.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
